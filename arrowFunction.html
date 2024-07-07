@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // with block
+        const greet = (name) => {
+            console.info(`hello ${name}`);
+        }
+
+        greet('zean');
+
+        // without block
+        const welc = (name = 'player') => console.info(`hello ${name}`);
+
+        welc();
+
+        // return value
+        // const multiple = (v1, v2) => {
+        //     return v1 * v2;
+        // }
+
+        const multiple = (v1, v2) => v1 * v2;
+
+        console.info(multiple(3, 5));
+
+        // without curly braces
+        const fruit = name => console.info(`fruit name: ${name}`);
+
+        fruit("apple");
+
+        // as parameter
+        function addDefaultName(callback) {
+            callback("Player");
+        }
+
+        addDefaultName(name => console.info(`hello ${name}`));
+        addDefaultName((name) => console.info(`greetings, ${name}`))
+
+        // test 
+        // function test(n) {
+        //     return `hi ${n}`;
+        // }
+
+        // console.log(test("mywn"));
+
+    </script>
+
+</body>
+
+</html>

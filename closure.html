@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // add
+        function createAdder(v) {
+
+            const owner = "Reza";
+
+            function add(param) {
+                console.info(owner);
+                return v + param
+            }
+
+            return add;
+
+        }
+
+        const addFive = createAdder(5);
+
+        console.info(addFive(10));
+        console.info(addFive(15));
+
+        const addTwenty = createAdder(20);
+
+        console.info(addTwenty(10));
+        console.info(addTwenty(80));
+
+        // multiple
+        function createMultiple(v) {
+            const label = "stage";
+
+            function multiple(param) {
+                console.info(label);
+                return v * param;
+            }
+
+            return multiple;
+        }
+
+        let createThree = createMultiple(3);
+        console.info(createThree(10));
+
+        const createSix = createMultiple(6);
+        console.info(createSix(10))
+
+    </script>
+
+</body>
+
+</html>

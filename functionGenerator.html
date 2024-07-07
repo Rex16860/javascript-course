@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // simple
+        function* produceNames() {
+            yield "Rick";
+            yield "Elena";
+            yield "John";
+            yield "Jean";
+        }
+
+        console.info(produceNames());
+
+        const names = produceNames();
+
+        for (n of names) {
+            console.info(n);
+        }
+
+
+        // complex
+        function* oddGenerator(v) {
+            for (let i = 0; i <= v; i++) {
+                if (i % 2 === 1) {
+                    console.info(`generator ${i}`);
+                    console.info("hello world");
+                    yield i;
+                }
+            }
+        }
+
+        oddNumG = oddGenerator;
+
+        for (n of oddNumG(10)) {
+            console.info(n);
+        }
+
+        function arrayFunction(v) {
+            r = []
+            for (let i = 0; i <= v; i++) {
+                if (i % 2 === 1) {
+                    console.info(`array ${i}`);
+                    console.info("hello world");
+                    r.push(i);
+                }
+            }
+
+            return r;
+        }
+
+        oddNumA = arrayFunction(10)
+        for (n in oddNumA) {
+            console.info(n);
+        }
+
+
+        // 
+        function* func() {
+            yield 10;
+            yield 20;
+            yield 30;
+        }
+
+        let gen = func();
+        console.log(gen.next().value);
+        console.log(gen.next().value);
+        console.log(gen.next().value);
+
+
+        // 
+        function* fGenerator() {
+            yield 2;
+            yield 3;
+        }
+
+        function* sGenerator() {
+            yield 1;
+            yield* fGenerator();
+            yield 4;
+        }
+
+        for (let v of sGenerator()) {
+            console.info(v);
+        }
+
+
+        // 
+        // function* generator() {
+        //     throw new console.error("error occured");
+        // }
+
+        // const it = generator();
+        // it.next();
+
+
+        // 
+        function* nextNatural() {
+            let naturalNum = 1;
+
+            while (1) {
+                yield naturalNum++;
+            }
+        }
+
+        gen = nextNatural();
+
+        for (let i = 0; i < 5; i++) {
+            console.info(gen.next().value);
+
+        }
+
+        function* infinite() {
+            let n = 1;
+            while ('a') {
+                yield n++;
+            }
+        }
+
+        let v = infinite();
+
+        console.info(v.next().value);
+        console.info(v.next().value);
+        console.info(v.next().value);
+
+        // for (i of v) {
+        //     console.info(i)
+        // }
+
+    </script>
+
+</body>
+
+</html>

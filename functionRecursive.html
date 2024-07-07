@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function forFactorial(v) {
+            let r = 1;
+
+            for (let i = 1; i <= v; i++) {
+                r *= i;
+            }
+
+            return r;
+        }
+
+        console.info(forFactorial(5));
+
+        function recursive(v) {
+            if (v === 1) {
+                return 1;
+            } else {
+                return v * recursive(v - 1);
+            }
+        }
+
+        console.info(recursive(5));
+
+
+        // function doSomething(action) {
+        //     console.info(action);
+
+        //     doSomething(action)
+        // }
+
+        // doSomething("hello")
+
+        function doSomething(n) {
+            if (n === 0) { // base condition
+                console.info("task is completed");
+                return
+            }
+
+            console.info("I'm doing something");
+            doSomething(n - 1); // recursive call
+        }
+
+        doSomething(3);
+
+        function forFactorialNew(v) {
+            let r = 1;
+
+            for (let i = v; i > 0; i--) {
+                r *= i;
+            }
+
+            return r;
+        }
+
+        console.info(forFactorialNew(5));
+
+        function findFactorial(n) {
+            if (n === 0) return 1;
+
+            let factorial = n * findFactorial(n - 1);
+            return factorial;
+        }
+
+        console.info(findFactorial(5));
+
+    </script>
+
+</body>
+
+</html>
