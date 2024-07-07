@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function greetings(name) {
+            console.info(`hello ${name}`);
+        }
+
+        const myName = greetings;
+        myName('john');
+
+        function defaultName(callback) {
+            callback("Anonym");
+        }
+
+        defaultName(greetings);
+
+        const defName = defaultName;
+        defName(myName)
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const items = {
+            armor: "shogun armor",
+            sword: "koton",
+            spear: "naginata",
+            longRange: "bow",
+            poison: undefined,
+            magic: null,
+        }
+
+        // armor
+        if ("armor" in items) {
+            console.info(items.armor)
+        } else {
+            console.info(false)
+        }
+
+        // poison
+        if ("poison" in items) {
+            console.info(items.poison)
+        } else {
+            console.info(false)
+        }
+
+
+        // magic
+        if ("magic" in items && items.magic !== null) {
+            console.info(items.magic)
+        } else {
+            console.info(false)
+        }
+
+        console.info("null" != null)
+
+    </script>
+
+</body>
+
+</html>

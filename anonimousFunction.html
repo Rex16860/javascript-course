@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let greet = function (name) {
+            console.info(`welcome ${name}`);
+        }
+
+        greet("anon");
+
+        function points(callback, callback2) {
+            callback("+10");
+            callback2("+20")
+        }
+
+        points(function (points) {
+            console.info(`p1 got ${points}`)
+        }, function (points) {
+            console.info(`p2 got ${points}`)
+        })
+
+        const healingWhishpering = function (points) {
+            console.info(points)
+        }
+
+        const pyromancyTrick = function (points) {
+            console.info(points)
+        }
+
+        points(healingWhishpering, pyromancyTrick)
+
+    </script>
+
+</body>
+
+</html>

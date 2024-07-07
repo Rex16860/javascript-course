@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        console.info(null || false);
+
+        const person = {
+            firstName: null,
+            lastName: undefined,
+        };
+
+        let name = person.firstName || person.lastName;
+
+        console.info(name);
+
+    </script>
+
+</body>
+
+</html>

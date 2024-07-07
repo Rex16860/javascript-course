@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function multiple(name, ...vals) {
+            let r = 1;
+            for (v of vals) {
+                r *= v;
+            }
+            console.info(`${name} is ${r}`)
+        }
+
+        multiple("apple", 10, 20, 10, 30);
+
+        let vals = [10, 20, 40, 5];
+        multiple("banana", ...vals);
+
+        // arguments
+        function oldMultiple() {
+            let r = 1;
+            for (v of arguments) {
+                r *= v;
+            }
+            console.info(`result of oldMultiple is ${r}`)
+        }
+
+        oldMultiple(1, 3, 5, 7, 10);
+
+    </script>
+
+</body>
+
+</html>
