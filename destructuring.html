@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // destructuring array
+        {
+            const students = ["michel", "john", "sean", "jean"];
+
+            const [m, j, s] = students;
+            console.info(m);
+            console.info(j);
+            console.info(s);
+        }
+
+        // destructuring object
+        {
+            const person = {
+                name: "John",
+                lastName: "doe",
+                address: {
+                    street: "street xxx",
+                    country: "boston",
+                    country: "us",
+                },
+                height: 180,
+                age: 23,
+            };
+
+            const { name, lastName, address, ...others } = person;
+            console.info(name);
+            console.info(lastName);
+            console.info(address);
+            console.info(others);
+        }
+
+        // destructuring nested object
+        {
+            const person = {
+                name: "John",
+                lastName: "doe",
+                address: {
+                    street: "street xxx",
+                    city: "boston",
+                    country: "us",
+                },
+                height: 180,
+                age: 23,
+            };
+
+            const { name, lastName, address: { street, city, country }, ...others } = person;
+            console.info(name);
+            console.info(lastName);
+            console.info(street);
+            console.info(city);
+            console.info(country);
+            console.info(others);
+        }
+
+        // destructuring on parameter
+        {
+            // function displayName(p) {
+            //     console.info(p.name);
+            //     console.info(p.middleName);
+            //     console.info(p.lastName);
+            // }
+            function displayName({ name, middleName, lastName }) {
+                console.info(name);
+                console.info(middleName);
+                console.info(lastName);
+            }
+            const person = {
+                name: "John",
+                middleName: "yyy",
+                lastName: "doe",
+            }
+
+            displayName(person);
+
+
+            function sum([v1, v2]) {
+                return v1 + v2;
+            }
+
+            const vs = [30, 20];
+            console.info(sum(vs));
+            console.info(sum([50, 50]));
+        }
+
+        // array destructuring default value 
+        {
+            const names = ["John", "Doe"];
+            const [firstName, middleName, lastName = "xxx"] = names;
+
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+
+        // object destructuring default value 
+        {
+            const person = {
+                firstName: "Jean",
+                lastName: "Doe",
+            }
+            const { firstName, middleName = "xxx", lastName } = person;
+
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+
+            // using alias to property
+            const {
+                firstName: fN,
+                middleName: mN = "yyy",
+                lastName: lN,
+            } = person;
+
+            console.info(fN);
+            console.info(mN);
+            console.info(lN);
+        }
+
+    </script>
+
+</body>
+
+</html>

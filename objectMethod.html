@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // basic
+        const person = {
+            name: "john",
+            walk: function waking(name) {
+                console.info(`${name} is walking`);
+            },
+        }
+
+        person.walk("john");
+
+        // add variable_method to object
+        const running = (name) => console.info(`${name} is running`);
+        person.run = running; // obj.property = variable_method_name
+
+        person.run("john")
+
+        // add method to person directly
+        person.eat = function (name) {
+            console.info(`${name} is eating`);
+        }
+        person.eat("john")
+
+    </script>
+
+</body>
+
+</html>
